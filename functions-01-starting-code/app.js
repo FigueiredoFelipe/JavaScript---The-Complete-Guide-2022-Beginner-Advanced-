@@ -34,14 +34,14 @@ const getComputerChoice = () => {
 };
 
 // to decide who won
-const getWinner = (cChoice, pChoice) =>
-  cChoice === pChoice
+const getWinner = (computerChoice, playerChoice) =>
+  computerChoice === playerChoice
     ? RESULT_DRAW
-    : (cChoice === ROCK && pChoice === PAPER) ||
-      (cChoice === PAPER && pChoice === SCISSORS) ||
-      (cChoice === SCISSORS && pChoice === ROCK)
-    ? RESULT_PLAYER_WINS
-    : RESULT_COMPUTER_WINS;
+    : (computerChoice === ROCK && playerChoice === PAPER) ||
+      (computerChoice === PAPER && playerChoice === SCISSORS) ||
+      (computerChoice === SCISSORS && playerChoice === ROCK)
+    ? RESULT_COMPUTER_WINS
+    : RESULT_PLAYER_WINS;
 
 startGameBtn.addEventListener('click', () => {
   if (gameIsRunning) {
@@ -52,5 +52,14 @@ startGameBtn.addEventListener('click', () => {
   const playerChoice = getPlayerChoice();
   const computerChoice = getComputerChoice();
   const winner = getWinner(playerChoice, computerChoice);
-  console.log(winner);
+  let message = `You picked ${playerChoice}, computer picked ${computerChoice}, therefore you `;
+  if (winner === RESULT_DRAW) {
+    message = message + 'had a draw.';
+  } else if (winner === RESULT_PLAYER_WINS) {
+    message = message + 'won.';
+  } else {
+    message = message + 'lost';
+  }
+  alert(message);
+  gameIsRunning = false;
 });
