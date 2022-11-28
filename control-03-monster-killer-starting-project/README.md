@@ -1,4 +1,4 @@
-# Monster Killer
+# Monster-Killer
 
 Live demo: https://monster-killer-byff.netlify.app
 
