@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Interaction</title>
+    <style>
+      .red-bg {
+        background-color: red;
+        color: white;
+      }
+      .visible {
+        display: block;
+      }
+      .invisible {
+        display: none;
+      }
+    </style>
+    <script src="scripts/app.js" defer></script>
+    <!-- The defer attribute is a boolean attribute.-->
+    <!-- If the defer attribute is set, it specifies that the script is downloaded in -->
+    <!-- parallel to parsing the page, and executed after the page has finished parsing  -->
+    <!-- This is important because if the script runs too early, it might be broken by any unparsed information. -->
+  </head>
+  <body>
+    <header><h1 id="main-title">Dive into the DOM!</h1></header>
+    <section class="red-bg">
+      <ul>
+        <li class="list-item">Item 1</li>
+        <li class="list-item">Item 2</li>
+        <li class="list-item">Item 3</li>
+      </ul>
+    </section>
+    <button>Toggle Visibility</button>
+    <p id="welcome-text" class="text-default">Welcome!</p>
+  </body>
+</html>
+
+<!-- NOTE: console.dir(document); gives me all properties of the object -->
